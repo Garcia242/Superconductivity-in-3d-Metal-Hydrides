@@ -1,0 +1,29 @@
+# output options
+LWAVE  = .FALSE. # write or don't write WAVECAR
+LCHARG = .FALSE. # write or don't write CHG and CHGCAR
+LELF   = .FALSE. # write or don't write ELF
+
+# constant pressure geometry optimisation
+IBRION = 1       # GO algorithm: 2=conjucate gradient, 1=Newton like
+NSW = 100        # number of GO steps
+ISIF = 3         # GO settings: 3=relax everything, 2=relax ions only, 4=keep volume fixed
+# pressure to optimise towards (in kbar):
+PSTRESS = 100
+
+# precision parameters
+EDIFF = 1E-6     # SCF energy convergence (eV/cell)
+EDIFFG = -1E-3   # Atomic force convergence (eV/Ang)
+PREC = high      # Generic precision setting: low, med, high, accurate
+
+# plane wave cutoff energy
+ENCUT = 800  
+
+# electronic relaxation
+ISMEAR = 0       # Smearing algorithm: -5 = Tetrahedron, 0 = Gaussian, 1..N = Methfessel
+SIGMA = 0.1      # Smearing width in eV
+
+# parallelisation setting
+# Young cluster:
+NCORE = 10
+# CP-Lab/studentrun:
+#NCORE = 4
