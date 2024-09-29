@@ -1,0 +1,26 @@
+&inputph
+  tr2_ph=1.0d-6,
+! Some directory and file name definitions:
+  prefix='FeH',
+  fildvscf='FeH_dv',
+  outdir='FeH-bcs/',
+  fildyn='FeH.dyn',
+  alpha_mix(1)=0.1,
+        
+ ! recover = .true.,
+! Atomic masses of atoms
+! WARNING: the order of these needs to
+! be consistent with the SCF input files
+
+amass(1)=55.845,
+amass(2)=1.008,
+  
+
+! Electron-phonon coefficients
+  electron_phonon='interpolated',
+  trans=.true.,
+  ldisp=.true.
+
+! q-point grid on which to perform DFPT
+  nq1=8, nq2=8, nq3=8
+ /

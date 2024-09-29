@@ -1,0 +1,23 @@
+&input
+    asr='simple',
+
+! Atomic masses of atoms
+! WARNING: the order of these needs to
+! be consistent with the SCF input files
+  amass(1)=55.845,
+  amass(2)=1.008,
+
+! File name conventions
+! Must be consistent with
+! h3s.q2r.in
+    flfrc='FeH.fc', 
+    flfrq='FeH.freq',
+    la2F=.true.,
+    dos=.true.
+    fldos='FeH.dos',
+    q_in_band_form = .true.,
+
+! q-grid for phonon evaluation
+   nk1=10, nk2=10, nk3=10, 
+   ndos=50
+ /

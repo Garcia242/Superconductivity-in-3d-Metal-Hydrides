@@ -1,0 +1,56 @@
+&control
+    calculation='scf'
+    restart_mode='from_scratch',
+    prefix='FeH',
+    pseudo_dir = './',
+    outdir='FeH-bcs/',
+  !  tstress = .true.,
+ !   tprnfor = .true.
+        
+ /
+ &system
+! Enter crystal structure information below
+    ibrav= 1
+    !space_group = 225
+    celldm(1) = 3.4419202805
+    ntyp= 2
+    nat=8
+! Edit plane wave cutoff below if necessary
+    ecutwfc = 90.0,
+    occupations = 'smearing',
+    smearing = 'methfessel-paxton',
+    degauss=0.02,
+    la2F = .true.
+ /
+&electrons
+    conv_thr =  1.0d-6,
+    mixing_beta = 0.7
+ /
+ATOMIC_SPECIES
+ Fe 55.845 Fe.pbe-spn-rrkjus_psl.1.0.0.UPF
+ H  1.008 H.pbe-rrkjus_psl.1.0.0.UPF
+!ATOMIC_POSITIONS crystal_sg 
+!Fe 0.00 0.00 0.00
+!H 0.50 0.50 0.50
+
+
+!CELL_PARAMETERS {angstrom}
+
+!3.4419202805         0.0000000000         0.0000000000
+!0.0000000000         3.4419202805         0.0000000000
+!0.0000000000         0.0000000000         3.4419202805
+
+ATOMIC_POSITIONS {crystal}
+
+Fe  0.000000000         0.000000000         0.000000000
+Fe  0.000000000         0.500000000         0.500000000
+Fe  0.500000000         0.000000000         0.500000000
+Fe  0.500000000         0.500000000         0.000000000
+H   0.500000000         0.500000000         0.500000000
+H   0.500000000         0.000000000         0.000000000
+H   0.000000000         0.500000000         0.000000000
+H   0.000000000         0.000000000         0.500000000
+
+
+K_POINTS {automatic} ! Edit k-grid size below
+8 8 8 0 0 0

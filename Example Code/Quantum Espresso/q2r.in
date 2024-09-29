@@ -1,0 +1,9 @@
+&input
+  zasr='simple',
+! File name conventions
+! Need to be consistent with
+! FeH.elph.in!
+  fildyn='FeH.dyn', 
+  flfrc='FeH.fc', 
+  la2F=.true.
+ /
